@@ -2,35 +2,1438 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/redux-devtools-extension/index.js":
-/*!********************************************************!*\
-  !*** ./node_modules/redux-devtools-extension/index.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-
-var compose = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js").compose;
-
-exports.__esModule = true;
-exports.composeWithDevTools =
-  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : function () {
-        if (arguments.length === 0) return undefined;
-        if (typeof arguments[0] === 'object') return compose;
-        return compose.apply(null, arguments);
-      };
-
-exports.devToolsEnhancer =
-  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
-    ? window.__REDUX_DEVTOOLS_EXTENSION__
-    : function () {
-        return function (noop) {
-          return noop;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "__DO_NOT_USE__ActionTypes": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.__DO_NOT_USE__ActionTypes),
+/* harmony export */   "applyMiddleware": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.applyMiddleware),
+/* harmony export */   "bindActionCreators": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.bindActionCreators),
+/* harmony export */   "combineReducers": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.combineReducers),
+/* harmony export */   "compose": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.compose),
+/* harmony export */   "createStore": () => (/* reexport safe */ redux__WEBPACK_IMPORTED_MODULE_0__.createStore),
+/* harmony export */   "MiddlewareArray": () => (/* binding */ MiddlewareArray),
+/* harmony export */   "configureStore": () => (/* binding */ configureStore),
+/* harmony export */   "createAction": () => (/* binding */ createAction),
+/* harmony export */   "createAsyncThunk": () => (/* binding */ createAsyncThunk),
+/* harmony export */   "createDraftSafeSelector": () => (/* binding */ createDraftSafeSelector),
+/* harmony export */   "createEntityAdapter": () => (/* binding */ createEntityAdapter),
+/* harmony export */   "createImmutableStateInvariantMiddleware": () => (/* binding */ createImmutableStateInvariantMiddleware),
+/* harmony export */   "createNextState": () => (/* reexport safe */ immer__WEBPACK_IMPORTED_MODULE_2__.default),
+/* harmony export */   "createReducer": () => (/* binding */ createReducer),
+/* harmony export */   "createSelector": () => (/* reexport safe */ reselect__WEBPACK_IMPORTED_MODULE_1__.createSelector),
+/* harmony export */   "createSerializableStateInvariantMiddleware": () => (/* binding */ createSerializableStateInvariantMiddleware),
+/* harmony export */   "createSlice": () => (/* binding */ createSlice),
+/* harmony export */   "current": () => (/* reexport safe */ immer__WEBPACK_IMPORTED_MODULE_2__.current),
+/* harmony export */   "findNonSerializableValue": () => (/* binding */ findNonSerializableValue),
+/* harmony export */   "freeze": () => (/* reexport safe */ immer__WEBPACK_IMPORTED_MODULE_2__.freeze),
+/* harmony export */   "getDefaultMiddleware": () => (/* binding */ getDefaultMiddleware),
+/* harmony export */   "getType": () => (/* binding */ getType),
+/* harmony export */   "isAllOf": () => (/* binding */ isAllOf),
+/* harmony export */   "isAnyOf": () => (/* binding */ isAnyOf),
+/* harmony export */   "isAsyncThunkAction": () => (/* binding */ isAsyncThunkAction),
+/* harmony export */   "isDraft": () => (/* reexport safe */ immer__WEBPACK_IMPORTED_MODULE_2__.isDraft),
+/* harmony export */   "isFulfilled": () => (/* binding */ isFulfilled),
+/* harmony export */   "isImmutableDefault": () => (/* binding */ isImmutableDefault),
+/* harmony export */   "isPending": () => (/* binding */ isPending),
+/* harmony export */   "isPlain": () => (/* binding */ isPlain),
+/* harmony export */   "isPlainObject": () => (/* binding */ isPlainObject),
+/* harmony export */   "isRejected": () => (/* binding */ isRejected),
+/* harmony export */   "isRejectedWithValue": () => (/* binding */ isRejectedWithValue),
+/* harmony export */   "miniSerializeError": () => (/* binding */ miniSerializeError),
+/* harmony export */   "nanoid": () => (/* binding */ nanoid),
+/* harmony export */   "original": () => (/* reexport safe */ immer__WEBPACK_IMPORTED_MODULE_2__.original),
+/* harmony export */   "unwrapResult": () => (/* binding */ unwrapResult)
+/* harmony export */ });
+/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! immer */ "./node_modules/immer/dist/immer.esm.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reselect */ "./node_modules/reselect/es/index.js");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = function (obj, key, value) { return key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value }) : obj[key] = value; };
+var __spreadValues = function (a, b) {
+    for (var prop in b || (b = {}))
+        if (__hasOwnProp.call(b, prop))
+            __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+        for (var _i = 0, _b = __getOwnPropSymbols(b); _i < _b.length; _i++) {
+            var prop = _b[_i];
+            if (__propIsEnum.call(b, prop))
+                __defNormalProp(a, prop, b[prop]);
+        }
+    return a;
+};
+var __spreadProps = function (a, b) { return __defProps(a, __getOwnPropDescs(b)); };
+var __async = function (__this, __arguments, generator) {
+    return new Promise(function (resolve, reject) {
+        var fulfilled = function (value) {
+            try {
+                step(generator.next(value));
+            }
+            catch (e) {
+                reject(e);
+            }
         };
-      };
+        var rejected = function (value) {
+            try {
+                step(generator.throw(value));
+            }
+            catch (e) {
+                reject(e);
+            }
+        };
+        var step = function (x) { return x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected); };
+        step((generator = generator.apply(__this, __arguments)).next());
+    });
+};
+// src/index.ts
 
+
+
+
+// src/createDraftSafeSelector.ts
+
+
+var createDraftSafeSelector = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var selector = reselect__WEBPACK_IMPORTED_MODULE_1__.createSelector.apply(void 0, args);
+    var wrappedSelector = function (value) {
+        var rest = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            rest[_i - 1] = arguments[_i];
+        }
+        return selector.apply(void 0, __spreadArray([(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(value) ? (0,immer__WEBPACK_IMPORTED_MODULE_2__.current)(value) : value], rest));
+    };
+    return wrappedSelector;
+};
+// src/configureStore.ts
+
+// src/devtoolsExtension.ts
+
+var composeWithDevTools = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : function () {
+    if (arguments.length === 0)
+        return void 0;
+    if (typeof arguments[0] === "object")
+        return redux__WEBPACK_IMPORTED_MODULE_0__.compose;
+    return redux__WEBPACK_IMPORTED_MODULE_0__.compose.apply(null, arguments);
+};
+var devToolsEnhancer = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ : function () {
+    return function (noop) {
+        return noop;
+    };
+};
+// src/isPlainObject.ts
+function isPlainObject(value) {
+    if (typeof value !== "object" || value === null)
+        return false;
+    var proto = value;
+    while (Object.getPrototypeOf(proto) !== null) {
+        proto = Object.getPrototypeOf(proto);
+    }
+    return Object.getPrototypeOf(value) === proto;
+}
+// src/getDefaultMiddleware.ts
+
+// src/utils.ts
+function getTimeMeasureUtils(maxDelay, fnName) {
+    var elapsed = 0;
+    return {
+        measureTime: function (fn) {
+            var started = Date.now();
+            try {
+                return fn();
+            }
+            finally {
+                var finished = Date.now();
+                elapsed += finished - started;
+            }
+        },
+        warnIfExceeded: function () {
+            if (elapsed > maxDelay) {
+                console.warn(fnName + " took " + elapsed + "ms, which is more than the warning threshold of " + maxDelay + "ms. \nIf your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.\nIt is disabled in production builds, so you don't need to worry about that.");
+            }
+        }
+    };
+}
+var MiddlewareArray = /** @class */ (function (_super) {
+    __extends(MiddlewareArray, _super);
+    function MiddlewareArray() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var _this = _super.apply(this, args) || this;
+        Object.setPrototypeOf(_this, MiddlewareArray.prototype);
+        return _this;
+    }
+    Object.defineProperty(MiddlewareArray, Symbol.species, {
+        get: function () {
+            return MiddlewareArray;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    MiddlewareArray.prototype.concat = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        return _super.prototype.concat.apply(this, arr);
+    };
+    MiddlewareArray.prototype.prepend = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        if (arr.length === 1 && Array.isArray(arr[0])) {
+            return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr[0].concat(this))))();
+        }
+        return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr.concat(this))))();
+    };
+    return MiddlewareArray;
+}(Array));
+// src/immutableStateInvariantMiddleware.ts
+var isProduction = "development" === "production";
+var prefix = "Invariant failed";
+function invariant(condition, message) {
+    if (condition) {
+        return;
+    }
+    if (isProduction) {
+        throw new Error(prefix);
+    }
+    throw new Error(prefix + ": " + (message || ""));
+}
+function stringify(obj, serializer, indent, decycler) {
+    return JSON.stringify(obj, getSerialize(serializer, decycler), indent);
+}
+function getSerialize(serializer, decycler) {
+    var stack = [], keys = [];
+    if (!decycler)
+        decycler = function (_, value) {
+            if (stack[0] === value)
+                return "[Circular ~]";
+            return "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
+        };
+    return function (key, value) {
+        if (stack.length > 0) {
+            var thisPos = stack.indexOf(this);
+            ~thisPos ? stack.splice(thisPos + 1) : stack.push(this);
+            ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key);
+            if (~stack.indexOf(value))
+                value = decycler.call(this, key, value);
+        }
+        else
+            stack.push(value);
+        return serializer == null ? value : serializer.call(this, key, value);
+    };
+}
+function isImmutableDefault(value) {
+    return typeof value !== "object" || value === null || typeof value === "undefined" || Object.isFrozen(value);
+}
+function trackForMutations(isImmutable, ignorePaths, obj) {
+    var trackedProperties = trackProperties(isImmutable, ignorePaths, obj);
+    return {
+        detectMutations: function () {
+            return detectMutations(isImmutable, ignorePaths, trackedProperties, obj);
+        }
+    };
+}
+function trackProperties(isImmutable, ignorePaths, obj, path) {
+    if (ignorePaths === void 0) { ignorePaths = []; }
+    if (path === void 0) { path = ""; }
+    var tracked = { value: obj };
+    if (!isImmutable(obj)) {
+        tracked.children = {};
+        for (var key in obj) {
+            var childPath = path ? path + "." + key : key;
+            if (ignorePaths.length && ignorePaths.indexOf(childPath) !== -1) {
+                continue;
+            }
+            tracked.children[key] = trackProperties(isImmutable, ignorePaths, obj[key], childPath);
+        }
+    }
+    return tracked;
+}
+function detectMutations(isImmutable, ignorePaths, trackedProperty, obj, sameParentRef, path) {
+    if (ignorePaths === void 0) { ignorePaths = []; }
+    if (sameParentRef === void 0) { sameParentRef = false; }
+    if (path === void 0) { path = ""; }
+    var prevObj = trackedProperty ? trackedProperty.value : void 0;
+    var sameRef = prevObj === obj;
+    if (sameParentRef && !sameRef && !Number.isNaN(obj)) {
+        return { wasMutated: true, path: path };
+    }
+    if (isImmutable(prevObj) || isImmutable(obj)) {
+        return { wasMutated: false };
+    }
+    var keysToDetect = {};
+    for (var key in trackedProperty.children) {
+        keysToDetect[key] = true;
+    }
+    for (var key in obj) {
+        keysToDetect[key] = true;
+    }
+    for (var key in keysToDetect) {
+        var childPath = path ? path + "." + key : key;
+        if (ignorePaths.length && ignorePaths.indexOf(childPath) !== -1) {
+            continue;
+        }
+        var result = detectMutations(isImmutable, ignorePaths, trackedProperty.children[key], obj[key], sameRef, childPath);
+        if (result.wasMutated) {
+            return result;
+        }
+    }
+    return { wasMutated: false };
+}
+function createImmutableStateInvariantMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    if (false) {}
+    var _b = options.isImmutable, isImmutable = _b === void 0 ? isImmutableDefault : _b, ignoredPaths = options.ignoredPaths, _c = options.warnAfter, warnAfter = _c === void 0 ? 32 : _c, ignore = options.ignore;
+    ignoredPaths = ignoredPaths || ignore;
+    var track = trackForMutations.bind(null, isImmutable, ignoredPaths);
+    return function (_b) {
+        var getState = _b.getState;
+        var state = getState();
+        var tracker = track(state);
+        var result;
+        return function (next) { return function (action) {
+            var measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
+            measureUtils.measureTime(function () {
+                state = getState();
+                result = tracker.detectMutations();
+                tracker = track(state);
+                invariant(!result.wasMutated, "A state mutation was detected between dispatches, in the path '" + (result.path || "") + "'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
+            });
+            var dispatchedAction = next(action);
+            measureUtils.measureTime(function () {
+                state = getState();
+                result = tracker.detectMutations();
+                tracker = track(state);
+                result.wasMutated && invariant(!result.wasMutated, "A state mutation was detected inside a dispatch, in the path: " + (result.path || "") + ". Take a look at the reducer(s) handling the action " + stringify(action) + ". (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
+            });
+            measureUtils.warnIfExceeded();
+            return dispatchedAction;
+        }; };
+    };
+}
+// src/serializableStateInvariantMiddleware.ts
+function isPlain(val) {
+    var type = typeof val;
+    return type === "undefined" || val === null || type === "string" || type === "boolean" || type === "number" || Array.isArray(val) || isPlainObject(val);
+}
+function findNonSerializableValue(value, path, isSerializable, getEntries, ignoredPaths) {
+    if (path === void 0) { path = ""; }
+    if (isSerializable === void 0) { isSerializable = isPlain; }
+    if (ignoredPaths === void 0) { ignoredPaths = []; }
+    var foundNestedSerializable;
+    if (!isSerializable(value)) {
+        return {
+            keyPath: path || "<root>",
+            value: value
+        };
+    }
+    if (typeof value !== "object" || value === null) {
+        return false;
+    }
+    var entries = getEntries != null ? getEntries(value) : Object.entries(value);
+    var hasIgnoredPaths = ignoredPaths.length > 0;
+    for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
+        var _b = entries_1[_i], key = _b[0], nestedValue = _b[1];
+        var nestedPath = path ? path + "." + key : key;
+        if (hasIgnoredPaths && ignoredPaths.indexOf(nestedPath) >= 0) {
+            continue;
+        }
+        if (!isSerializable(nestedValue)) {
+            return {
+                keyPath: nestedPath,
+                value: nestedValue
+            };
+        }
+        if (typeof nestedValue === "object") {
+            foundNestedSerializable = findNonSerializableValue(nestedValue, nestedPath, isSerializable, getEntries, ignoredPaths);
+            if (foundNestedSerializable) {
+                return foundNestedSerializable;
+            }
+        }
+    }
+    return false;
+}
+function createSerializableStateInvariantMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    if (false) {}
+    var _b = options.isSerializable, isSerializable = _b === void 0 ? isPlain : _b, getEntries = options.getEntries, _c = options.ignoredActions, ignoredActions = _c === void 0 ? [] : _c, _d = options.ignoredActionPaths, ignoredActionPaths = _d === void 0 ? ["meta.arg", "meta.baseQueryMeta"] : _d, _e = options.ignoredPaths, ignoredPaths = _e === void 0 ? [] : _e, _f = options.warnAfter, warnAfter = _f === void 0 ? 32 : _f, _g = options.ignoreState, ignoreState = _g === void 0 ? false : _g;
+    return function (storeAPI) { return function (next) { return function (action) {
+        if (ignoredActions.length && ignoredActions.indexOf(action.type) !== -1) {
+            return next(action);
+        }
+        var measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+        measureUtils.measureTime(function () {
+            var foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths);
+            if (foundActionNonSerializableValue) {
+                var keyPath = foundActionNonSerializableValue.keyPath, value = foundActionNonSerializableValue.value;
+                console.error("A non-serializable value was detected in an action, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the logic that dispatched this action: ", action, "\n(See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)", "\n(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)");
+            }
+        });
+        var result = next(action);
+        if (!ignoreState) {
+            measureUtils.measureTime(function () {
+                var state = storeAPI.getState();
+                var foundStateNonSerializableValue = findNonSerializableValue(state, "", isSerializable, getEntries, ignoredPaths);
+                if (foundStateNonSerializableValue) {
+                    var keyPath = foundStateNonSerializableValue.keyPath, value = foundStateNonSerializableValue.value;
+                    console.error("A non-serializable value was detected in the state, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the reducer(s) handling this action type: " + action.type + ".\n(See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)");
+                }
+            });
+            measureUtils.warnIfExceeded();
+        }
+        return result;
+    }; }; };
+}
+// src/getDefaultMiddleware.ts
+function isBoolean(x) {
+    return typeof x === "boolean";
+}
+function curryGetDefaultMiddleware() {
+    return function curriedGetDefaultMiddleware(options) {
+        return getDefaultMiddleware(options);
+    };
+}
+function getDefaultMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    var _b = options.thunk, thunk = _b === void 0 ? true : _b, _c = options.immutableCheck, immutableCheck = _c === void 0 ? true : _c, _d = options.serializableCheck, serializableCheck = _d === void 0 ? true : _d;
+    var middlewareArray = new MiddlewareArray();
+    if (thunk) {
+        if (isBoolean(thunk)) {
+            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__.default);
+        }
+        else {
+            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__.default.withExtraArgument(thunk.extraArgument));
+        }
+    }
+    if (true) {
+        if (immutableCheck) {
+            var immutableOptions = {};
+            if (!isBoolean(immutableCheck)) {
+                immutableOptions = immutableCheck;
+            }
+            middlewareArray.unshift(createImmutableStateInvariantMiddleware(immutableOptions));
+        }
+        if (serializableCheck) {
+            var serializableOptions = {};
+            if (!isBoolean(serializableCheck)) {
+                serializableOptions = serializableCheck;
+            }
+            middlewareArray.push(createSerializableStateInvariantMiddleware(serializableOptions));
+        }
+    }
+    return middlewareArray;
+}
+// src/configureStore.ts
+var IS_PRODUCTION = "development" === "production";
+function configureStore(options) {
+    var curriedGetDefaultMiddleware = curryGetDefaultMiddleware();
+    var _b = options || {}, _c = _b.reducer, reducer = _c === void 0 ? void 0 : _c, _d = _b.middleware, middleware = _d === void 0 ? curriedGetDefaultMiddleware() : _d, _e = _b.devTools, devTools = _e === void 0 ? true : _e, _f = _b.preloadedState, preloadedState = _f === void 0 ? void 0 : _f, _g = _b.enhancers, enhancers = _g === void 0 ? void 0 : _g;
+    var rootReducer;
+    if (typeof reducer === "function") {
+        rootReducer = reducer;
+    }
+    else if (isPlainObject(reducer)) {
+        rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_0__.combineReducers)(reducer);
+    }
+    else {
+        throw new Error('"reducer" is a required argument, and must be a function or an object of functions that can be passed to combineReducers');
+    }
+    var finalMiddleware = middleware;
+    if (typeof finalMiddleware === "function") {
+        finalMiddleware = finalMiddleware(curriedGetDefaultMiddleware);
+        if (!IS_PRODUCTION && !Array.isArray(finalMiddleware)) {
+            throw new Error("when using a middleware builder function, an array of middleware must be returned");
+        }
+    }
+    if (!IS_PRODUCTION && finalMiddleware.some(function (item) { return typeof item !== "function"; })) {
+        throw new Error("each middleware provided to configureStore must be a function");
+    }
+    var middlewareEnhancer = redux__WEBPACK_IMPORTED_MODULE_0__.applyMiddleware.apply(void 0, finalMiddleware);
+    var finalCompose = redux__WEBPACK_IMPORTED_MODULE_0__.compose;
+    if (devTools) {
+        finalCompose = composeWithDevTools(__spreadValues({
+            trace: !IS_PRODUCTION
+        }, typeof devTools === "object" && devTools));
+    }
+    var storeEnhancers = [middlewareEnhancer];
+    if (Array.isArray(enhancers)) {
+        storeEnhancers = __spreadArray([middlewareEnhancer], enhancers);
+    }
+    else if (typeof enhancers === "function") {
+        storeEnhancers = enhancers(storeEnhancers);
+    }
+    var composedEnhancer = finalCompose.apply(void 0, storeEnhancers);
+    return (0,redux__WEBPACK_IMPORTED_MODULE_0__.createStore)(rootReducer, preloadedState, composedEnhancer);
+}
+// src/createAction.ts
+function createAction(type, prepareAction) {
+    function actionCreator() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (prepareAction) {
+            var prepared = prepareAction.apply(void 0, args);
+            if (!prepared) {
+                throw new Error("prepareAction did not return an object");
+            }
+            return __spreadValues(__spreadValues({
+                type: type,
+                payload: prepared.payload
+            }, "meta" in prepared && { meta: prepared.meta }), "error" in prepared && { error: prepared.error });
+        }
+        return { type: type, payload: args[0] };
+    }
+    actionCreator.toString = function () { return "" + type; };
+    actionCreator.type = type;
+    actionCreator.match = function (action) { return action.type === type; };
+    return actionCreator;
+}
+function isFSA(action) {
+    return isPlainObject(action) && typeof action.type === "string" && Object.keys(action).every(isValidKey);
+}
+function isValidKey(key) {
+    return ["type", "payload", "error", "meta"].indexOf(key) > -1;
+}
+function getType(actionCreator) {
+    return "" + actionCreator;
+}
+// src/createReducer.ts
+
+// src/mapBuilders.ts
+function executeReducerBuilderCallback(builderCallback) {
+    var actionsMap = {};
+    var actionMatchers = [];
+    var defaultCaseReducer;
+    var builder = {
+        addCase: function (typeOrActionCreator, reducer) {
+            if (true) {
+                if (actionMatchers.length > 0) {
+                    throw new Error("`builder.addCase` should only be called before calling `builder.addMatcher`");
+                }
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addCase` should only be called before calling `builder.addDefaultCase`");
+                }
+            }
+            var type = typeof typeOrActionCreator === "string" ? typeOrActionCreator : typeOrActionCreator.type;
+            if (type in actionsMap) {
+                throw new Error("addCase cannot be called with two reducers for the same action type");
+            }
+            actionsMap[type] = reducer;
+            return builder;
+        },
+        addMatcher: function (matcher, reducer) {
+            if (true) {
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addMatcher` should only be called before calling `builder.addDefaultCase`");
+                }
+            }
+            actionMatchers.push({ matcher: matcher, reducer: reducer });
+            return builder;
+        },
+        addDefaultCase: function (reducer) {
+            if (true) {
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addDefaultCase` can only be called once");
+                }
+            }
+            defaultCaseReducer = reducer;
+            return builder;
+        }
+    };
+    builderCallback(builder);
+    return [actionsMap, actionMatchers, defaultCaseReducer];
+}
+// src/createReducer.ts
+function createReducer(initialState, mapOrBuilderCallback, actionMatchers, defaultCaseReducer) {
+    if (actionMatchers === void 0) { actionMatchers = []; }
+    var _b = typeof mapOrBuilderCallback === "function" ? executeReducerBuilderCallback(mapOrBuilderCallback) : [mapOrBuilderCallback, actionMatchers, defaultCaseReducer], actionsMap = _b[0], finalActionMatchers = _b[1], finalDefaultCaseReducer = _b[2];
+    var frozenInitialState = (0,immer__WEBPACK_IMPORTED_MODULE_2__.default)(initialState, function () {
+    });
+    return function (state, action) {
+        if (state === void 0) { state = frozenInitialState; }
+        var caseReducers = __spreadArray([
+            actionsMap[action.type]
+        ], finalActionMatchers.filter(function (_b) {
+            var matcher = _b.matcher;
+            return matcher(action);
+        }).map(function (_b) {
+            var reducer = _b.reducer;
+            return reducer;
+        }));
+        if (caseReducers.filter(function (cr) { return !!cr; }).length === 0) {
+            caseReducers = [finalDefaultCaseReducer];
+        }
+        return caseReducers.reduce(function (previousState, caseReducer) {
+            if (caseReducer) {
+                if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(previousState)) {
+                    var draft = previousState;
+                    var result = caseReducer(draft, action);
+                    if (typeof result === "undefined") {
+                        return previousState;
+                    }
+                    return result;
+                }
+                else if (!(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraftable)(previousState)) {
+                    var result = caseReducer(previousState, action);
+                    if (typeof result === "undefined") {
+                        if (previousState === null) {
+                            return previousState;
+                        }
+                        throw Error("A case reducer on a non-draftable value must not return undefined");
+                    }
+                    return result;
+                }
+                else {
+                    return (0,immer__WEBPACK_IMPORTED_MODULE_2__.default)(previousState, function (draft) {
+                        return caseReducer(draft, action);
+                    });
+                }
+            }
+            return previousState;
+        }, state);
+    };
+}
+// src/createSlice.ts
+function getType2(slice, actionKey) {
+    return slice + "/" + actionKey;
+}
+function createSlice(options) {
+    var name = options.name, initialState = options.initialState;
+    if (!name) {
+        throw new Error("`name` is a required option for createSlice");
+    }
+    var reducers = options.reducers || {};
+    var _b = typeof options.extraReducers === "function" ? executeReducerBuilderCallback(options.extraReducers) : [options.extraReducers], _c = _b[0], extraReducers = _c === void 0 ? {} : _c, _d = _b[1], actionMatchers = _d === void 0 ? [] : _d, _e = _b[2], defaultCaseReducer = _e === void 0 ? void 0 : _e;
+    var reducerNames = Object.keys(reducers);
+    var sliceCaseReducersByName = {};
+    var sliceCaseReducersByType = {};
+    var actionCreators = {};
+    reducerNames.forEach(function (reducerName) {
+        var maybeReducerWithPrepare = reducers[reducerName];
+        var type = getType2(name, reducerName);
+        var caseReducer;
+        var prepareCallback;
+        if ("reducer" in maybeReducerWithPrepare) {
+            caseReducer = maybeReducerWithPrepare.reducer;
+            prepareCallback = maybeReducerWithPrepare.prepare;
+        }
+        else {
+            caseReducer = maybeReducerWithPrepare;
+        }
+        sliceCaseReducersByName[reducerName] = caseReducer;
+        sliceCaseReducersByType[type] = caseReducer;
+        actionCreators[reducerName] = prepareCallback ? createAction(type, prepareCallback) : createAction(type);
+    });
+    var finalCaseReducers = __spreadValues(__spreadValues({}, extraReducers), sliceCaseReducersByType);
+    var reducer = createReducer(initialState, finalCaseReducers, actionMatchers, defaultCaseReducer);
+    return {
+        name: name,
+        reducer: reducer,
+        actions: actionCreators,
+        caseReducers: sliceCaseReducersByName
+    };
+}
+// src/entities/entity_state.ts
+function getInitialEntityState() {
+    return {
+        ids: [],
+        entities: {}
+    };
+}
+function createInitialStateFactory() {
+    function getInitialState(additionalState) {
+        if (additionalState === void 0) { additionalState = {}; }
+        return Object.assign(getInitialEntityState(), additionalState);
+    }
+    return { getInitialState: getInitialState };
+}
+// src/entities/state_selectors.ts
+function createSelectorsFactory() {
+    function getSelectors(selectState) {
+        var selectIds = function (state) { return state.ids; };
+        var selectEntities = function (state) { return state.entities; };
+        var selectAll = createDraftSafeSelector(selectIds, selectEntities, function (ids, entities) { return ids.map(function (id) { return entities[id]; }); });
+        var selectId = function (_, id) { return id; };
+        var selectById = function (entities, id) { return entities[id]; };
+        var selectTotal = createDraftSafeSelector(selectIds, function (ids) { return ids.length; });
+        if (!selectState) {
+            return {
+                selectIds: selectIds,
+                selectEntities: selectEntities,
+                selectAll: selectAll,
+                selectTotal: selectTotal,
+                selectById: createDraftSafeSelector(selectEntities, selectId, selectById)
+            };
+        }
+        var selectGlobalizedEntities = createDraftSafeSelector(selectState, selectEntities);
+        return {
+            selectIds: createDraftSafeSelector(selectState, selectIds),
+            selectEntities: selectGlobalizedEntities,
+            selectAll: createDraftSafeSelector(selectState, selectAll),
+            selectTotal: createDraftSafeSelector(selectState, selectTotal),
+            selectById: createDraftSafeSelector(selectGlobalizedEntities, selectId, selectById)
+        };
+    }
+    return { getSelectors: getSelectors };
+}
+// src/entities/state_adapter.ts
+
+function createSingleArgumentStateOperator(mutator) {
+    var operator = createStateOperator(function (_, state) { return mutator(state); });
+    return function operation(state) {
+        return operator(state, void 0);
+    };
+}
+function createStateOperator(mutator) {
+    return function operation(state, arg) {
+        function isPayloadActionArgument(arg2) {
+            return isFSA(arg2);
+        }
+        var runMutator = function (draft) {
+            if (isPayloadActionArgument(arg)) {
+                mutator(arg.payload, draft);
+            }
+            else {
+                mutator(arg, draft);
+            }
+        };
+        if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(state)) {
+            runMutator(state);
+            return state;
+        }
+        else {
+            return (0,immer__WEBPACK_IMPORTED_MODULE_2__.default)(state, runMutator);
+        }
+    };
+}
+// src/entities/utils.ts
+function selectIdValue(entity, selectId) {
+    var key = selectId(entity);
+    if ( true && key === void 0) {
+        console.warn("The entity passed to the `selectId` implementation returned undefined.", "You should probably provide your own `selectId` implementation.", "The entity that was passed:", entity, "The `selectId` implementation:", selectId.toString());
+    }
+    return key;
+}
+function ensureEntitiesArray(entities) {
+    if (!Array.isArray(entities)) {
+        entities = Object.values(entities);
+    }
+    return entities;
+}
+function splitAddedUpdatedEntities(newEntities, selectId, state) {
+    newEntities = ensureEntitiesArray(newEntities);
+    var added = [];
+    var updated = [];
+    for (var _i = 0, newEntities_1 = newEntities; _i < newEntities_1.length; _i++) {
+        var entity = newEntities_1[_i];
+        var id = selectIdValue(entity, selectId);
+        if (id in state.entities) {
+            updated.push({ id: id, changes: entity });
+        }
+        else {
+            added.push(entity);
+        }
+    }
+    return [added, updated];
+}
+// src/entities/unsorted_state_adapter.ts
+function createUnsortedStateAdapter(selectId) {
+    function addOneMutably(entity, state) {
+        var key = selectIdValue(entity, selectId);
+        if (key in state.entities) {
+            return;
+        }
+        state.ids.push(key);
+        state.entities[key] = entity;
+    }
+    function addManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        for (var _i = 0, newEntities_2 = newEntities; _i < newEntities_2.length; _i++) {
+            var entity = newEntities_2[_i];
+            addOneMutably(entity, state);
+        }
+    }
+    function setOneMutably(entity, state) {
+        var key = selectIdValue(entity, selectId);
+        if (!(key in state.entities)) {
+            state.ids.push(key);
+        }
+        state.entities[key] = entity;
+    }
+    function setManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        for (var _i = 0, newEntities_3 = newEntities; _i < newEntities_3.length; _i++) {
+            var entity = newEntities_3[_i];
+            setOneMutably(entity, state);
+        }
+    }
+    function setAllMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        state.ids = [];
+        state.entities = {};
+        addManyMutably(newEntities, state);
+    }
+    function removeOneMutably(key, state) {
+        return removeManyMutably([key], state);
+    }
+    function removeManyMutably(keys, state) {
+        var didMutate = false;
+        keys.forEach(function (key) {
+            if (key in state.entities) {
+                delete state.entities[key];
+                didMutate = true;
+            }
+        });
+        if (didMutate) {
+            state.ids = state.ids.filter(function (id) { return id in state.entities; });
+        }
+    }
+    function removeAllMutably(state) {
+        Object.assign(state, {
+            ids: [],
+            entities: {}
+        });
+    }
+    function takeNewKey(keys, update, state) {
+        var original2 = state.entities[update.id];
+        var updated = Object.assign({}, original2, update.changes);
+        var newKey = selectIdValue(updated, selectId);
+        var hasNewKey = newKey !== update.id;
+        if (hasNewKey) {
+            keys[update.id] = newKey;
+            delete state.entities[update.id];
+        }
+        state.entities[newKey] = updated;
+        return hasNewKey;
+    }
+    function updateOneMutably(update, state) {
+        return updateManyMutably([update], state);
+    }
+    function updateManyMutably(updates, state) {
+        var newKeys = {};
+        var updatesPerEntity = {};
+        updates.forEach(function (update) {
+            if (update.id in state.entities) {
+                updatesPerEntity[update.id] = {
+                    id: update.id,
+                    changes: __spreadValues(__spreadValues({}, updatesPerEntity[update.id] ? updatesPerEntity[update.id].changes : null), update.changes)
+                };
+            }
+        });
+        updates = Object.values(updatesPerEntity);
+        var didMutateEntities = updates.length > 0;
+        if (didMutateEntities) {
+            var didMutateIds = updates.filter(function (update) { return takeNewKey(newKeys, update, state); }).length > 0;
+            if (didMutateIds) {
+                state.ids = state.ids.map(function (id) { return newKeys[id] || id; });
+            }
+        }
+    }
+    function upsertOneMutably(entity, state) {
+        return upsertManyMutably([entity], state);
+    }
+    function upsertManyMutably(newEntities, state) {
+        var _b = splitAddedUpdatedEntities(newEntities, selectId, state), added = _b[0], updated = _b[1];
+        updateManyMutably(updated, state);
+        addManyMutably(added, state);
+    }
+    return {
+        removeAll: createSingleArgumentStateOperator(removeAllMutably),
+        addOne: createStateOperator(addOneMutably),
+        addMany: createStateOperator(addManyMutably),
+        setOne: createStateOperator(setOneMutably),
+        setMany: createStateOperator(setManyMutably),
+        setAll: createStateOperator(setAllMutably),
+        updateOne: createStateOperator(updateOneMutably),
+        updateMany: createStateOperator(updateManyMutably),
+        upsertOne: createStateOperator(upsertOneMutably),
+        upsertMany: createStateOperator(upsertManyMutably),
+        removeOne: createStateOperator(removeOneMutably),
+        removeMany: createStateOperator(removeManyMutably)
+    };
+}
+// src/entities/sorted_state_adapter.ts
+function createSortedStateAdapter(selectId, sort) {
+    var _b = createUnsortedStateAdapter(selectId), removeOne = _b.removeOne, removeMany = _b.removeMany, removeAll = _b.removeAll;
+    function addOneMutably(entity, state) {
+        return addManyMutably([entity], state);
+    }
+    function addManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        var models = newEntities.filter(function (model) { return !(selectIdValue(model, selectId) in state.entities); });
+        if (models.length !== 0) {
+            merge(models, state);
+        }
+    }
+    function setOneMutably(entity, state) {
+        return setManyMutably([entity], state);
+    }
+    function setManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        if (newEntities.length !== 0) {
+            merge(newEntities, state);
+        }
+    }
+    function setAllMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        state.entities = {};
+        state.ids = [];
+        addManyMutably(newEntities, state);
+    }
+    function updateOneMutably(update, state) {
+        return updateManyMutably([update], state);
+    }
+    function takeUpdatedModel(models, update, state) {
+        if (!(update.id in state.entities)) {
+            return false;
+        }
+        var original2 = state.entities[update.id];
+        var updated = Object.assign({}, original2, update.changes);
+        var newKey = selectIdValue(updated, selectId);
+        delete state.entities[update.id];
+        models.push(updated);
+        return newKey !== update.id;
+    }
+    function updateManyMutably(updates, state) {
+        var models = [];
+        updates.forEach(function (update) { return takeUpdatedModel(models, update, state); });
+        if (models.length !== 0) {
+            merge(models, state);
+        }
+    }
+    function upsertOneMutably(entity, state) {
+        return upsertManyMutably([entity], state);
+    }
+    function upsertManyMutably(newEntities, state) {
+        var _b = splitAddedUpdatedEntities(newEntities, selectId, state), added = _b[0], updated = _b[1];
+        updateManyMutably(updated, state);
+        addManyMutably(added, state);
+    }
+    function areArraysEqual(a, b) {
+        if (a.length !== b.length) {
+            return false;
+        }
+        for (var i = 0; i < a.length && i < b.length; i++) {
+            if (a[i] === b[i]) {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+    function merge(models, state) {
+        models.forEach(function (model) {
+            state.entities[selectId(model)] = model;
+        });
+        var allEntities = Object.values(state.entities);
+        allEntities.sort(sort);
+        var newSortedIds = allEntities.map(selectId);
+        var ids = state.ids;
+        if (!areArraysEqual(ids, newSortedIds)) {
+            state.ids = newSortedIds;
+        }
+    }
+    return {
+        removeOne: removeOne,
+        removeMany: removeMany,
+        removeAll: removeAll,
+        addOne: createStateOperator(addOneMutably),
+        updateOne: createStateOperator(updateOneMutably),
+        upsertOne: createStateOperator(upsertOneMutably),
+        setOne: createStateOperator(setOneMutably),
+        setMany: createStateOperator(setManyMutably),
+        setAll: createStateOperator(setAllMutably),
+        addMany: createStateOperator(addManyMutably),
+        updateMany: createStateOperator(updateManyMutably),
+        upsertMany: createStateOperator(upsertManyMutably)
+    };
+}
+// src/entities/create_adapter.ts
+function createEntityAdapter(options) {
+    if (options === void 0) { options = {}; }
+    var _b = __spreadValues({
+        sortComparer: false,
+        selectId: function (instance) { return instance.id; }
+    }, options), selectId = _b.selectId, sortComparer = _b.sortComparer;
+    var stateFactory = createInitialStateFactory();
+    var selectorsFactory = createSelectorsFactory();
+    var stateAdapter = sortComparer ? createSortedStateAdapter(selectId, sortComparer) : createUnsortedStateAdapter(selectId);
+    return __spreadValues(__spreadValues(__spreadValues({
+        selectId: selectId,
+        sortComparer: sortComparer
+    }, stateFactory), selectorsFactory), stateAdapter);
+}
+// src/nanoid.ts
+var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW";
+var nanoid = function (size) {
+    if (size === void 0) { size = 21; }
+    var id = "";
+    var i = size;
+    while (i--) {
+        id += urlAlphabet[Math.random() * 64 | 0];
+    }
+    return id;
+};
+// src/createAsyncThunk.ts
+var commonProperties = [
+    "name",
+    "message",
+    "stack",
+    "code"
+];
+var RejectWithValue = /** @class */ (function () {
+    function RejectWithValue(payload, meta) {
+        this.payload = payload;
+        this.meta = meta;
+    }
+    return RejectWithValue;
+}());
+var FulfillWithMeta = /** @class */ (function () {
+    function FulfillWithMeta(payload, meta) {
+        this.payload = payload;
+        this.meta = meta;
+    }
+    return FulfillWithMeta;
+}());
+var miniSerializeError = function (value) {
+    if (typeof value === "object" && value !== null) {
+        var simpleError = {};
+        for (var _i = 0, commonProperties_1 = commonProperties; _i < commonProperties_1.length; _i++) {
+            var property = commonProperties_1[_i];
+            if (typeof value[property] === "string") {
+                simpleError[property] = value[property];
+            }
+        }
+        return simpleError;
+    }
+    return { message: String(value) };
+};
+function createAsyncThunk(typePrefix, payloadCreator, options) {
+    var fulfilled = createAction(typePrefix + "/fulfilled", function (payload, requestId, arg, meta) { return ({
+        payload: payload,
+        meta: __spreadProps(__spreadValues({}, meta || {}), {
+            arg: arg,
+            requestId: requestId,
+            requestStatus: "fulfilled"
+        })
+    }); });
+    var pending = createAction(typePrefix + "/pending", function (requestId, arg, meta) { return ({
+        payload: void 0,
+        meta: __spreadProps(__spreadValues({}, meta || {}), {
+            arg: arg,
+            requestId: requestId,
+            requestStatus: "pending"
+        })
+    }); });
+    var rejected = createAction(typePrefix + "/rejected", function (error, requestId, arg, payload, meta) { return ({
+        payload: payload,
+        error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
+        meta: __spreadProps(__spreadValues({}, meta || {}), {
+            arg: arg,
+            requestId: requestId,
+            rejectedWithValue: !!payload,
+            requestStatus: "rejected",
+            aborted: (error == null ? void 0 : error.name) === "AbortError",
+            condition: (error == null ? void 0 : error.name) === "ConditionError"
+        })
+    }); });
+    var displayedWarning = false;
+    var AC = typeof AbortController !== "undefined" ? AbortController : /** @class */ (function () {
+        function class_1() {
+            this.signal = {
+                aborted: false,
+                addEventListener: function () {
+                },
+                dispatchEvent: function () {
+                    return false;
+                },
+                onabort: function () {
+                },
+                removeEventListener: function () {
+                }
+            };
+        }
+        class_1.prototype.abort = function () {
+            if (true) {
+                if (!displayedWarning) {
+                    displayedWarning = true;
+                    console.info("This platform does not implement AbortController. \nIf you want to use the AbortController to react to `abort` events, please consider importing a polyfill like 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'.");
+                }
+            }
+        };
+        return class_1;
+    }());
+    function actionCreator(arg) {
+        return function (dispatch, getState, extra) {
+            var _a;
+            var requestId = ((_a = options == null ? void 0 : options.idGenerator) != null ? _a : nanoid)();
+            var abortController = new AC();
+            var abortReason;
+            var abortedPromise = new Promise(function (_, reject) { return abortController.signal.addEventListener("abort", function () { return reject({ name: "AbortError", message: abortReason || "Aborted" }); }); });
+            var started = false;
+            function abort(reason) {
+                if (started) {
+                    abortReason = reason;
+                    abortController.abort();
+                }
+            }
+            var promise = function () {
+                return __async(this, null, function () {
+                    var _a2, finalAction, err_1, skipDispatch;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _b.trys.push([0, 2, , 3]);
+                                if (options && options.condition && options.condition(arg, { getState: getState, extra: extra }) === false) {
+                                    throw {
+                                        name: "ConditionError",
+                                        message: "Aborted due to condition callback returning false."
+                                    };
+                                }
+                                started = true;
+                                dispatch(pending(requestId, arg, (_a2 = options == null ? void 0 : options.getPendingMeta) == null ? void 0 : _a2.call(options, { requestId: requestId, arg: arg }, { getState: getState, extra: extra })));
+                                return [4 /*yield*/, Promise.race([
+                                        abortedPromise,
+                                        Promise.resolve(payloadCreator(arg, {
+                                            dispatch: dispatch,
+                                            getState: getState,
+                                            extra: extra,
+                                            requestId: requestId,
+                                            signal: abortController.signal,
+                                            rejectWithValue: function (value, meta) {
+                                                return new RejectWithValue(value, meta);
+                                            },
+                                            fulfillWithValue: function (value, meta) {
+                                                return new FulfillWithMeta(value, meta);
+                                            }
+                                        })).then(function (result) {
+                                            if (result instanceof RejectWithValue) {
+                                                throw result;
+                                            }
+                                            if (result instanceof FulfillWithMeta) {
+                                                return fulfilled(result.payload, requestId, arg, result.meta);
+                                            }
+                                            return fulfilled(result, requestId, arg);
+                                        })
+                                    ])];
+                            case 1:
+                                finalAction = _b.sent();
+                                return [3 /*break*/, 3];
+                            case 2:
+                                err_1 = _b.sent();
+                                finalAction = err_1 instanceof RejectWithValue ? rejected(null, requestId, arg, err_1.payload, err_1.meta) : rejected(err_1, requestId, arg);
+                                return [3 /*break*/, 3];
+                            case 3:
+                                skipDispatch = options && !options.dispatchConditionRejection && rejected.match(finalAction) && finalAction.meta.condition;
+                                if (!skipDispatch) {
+                                    dispatch(finalAction);
+                                }
+                                return [2 /*return*/, finalAction];
+                        }
+                    });
+                });
+            }();
+            return Object.assign(promise, {
+                abort: abort,
+                requestId: requestId,
+                arg: arg,
+                unwrap: function () {
+                    return promise.then(unwrapResult);
+                }
+            });
+        };
+    }
+    return Object.assign(actionCreator, {
+        pending: pending,
+        rejected: rejected,
+        fulfilled: fulfilled,
+        typePrefix: typePrefix
+    });
+}
+function unwrapResult(action) {
+    if (action.meta && action.meta.rejectedWithValue) {
+        throw action.payload;
+    }
+    if (action.error) {
+        throw action.error;
+    }
+    return action.payload;
+}
+// src/tsHelpers.ts
+var hasMatchFunction = function (v) {
+    return v && typeof v.match === "function";
+};
+// src/matchers.ts
+var matches = function (matcher, action) {
+    if (hasMatchFunction(matcher)) {
+        return matcher.match(action);
+    }
+    else {
+        return matcher(action);
+    }
+};
+function isAnyOf() {
+    var matchers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        matchers[_i] = arguments[_i];
+    }
+    return function (action) {
+        return matchers.some(function (matcher) { return matches(matcher, action); });
+    };
+}
+function isAllOf() {
+    var matchers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        matchers[_i] = arguments[_i];
+    }
+    return function (action) {
+        return matchers.every(function (matcher) { return matches(matcher, action); });
+    };
+}
+function hasExpectedRequestMetadata(action, validStatus) {
+    if (!action || !action.meta)
+        return false;
+    var hasValidRequestId = typeof action.meta.requestId === "string";
+    var hasValidRequestStatus = validStatus.indexOf(action.meta.requestStatus) > -1;
+    return hasValidRequestId && hasValidRequestStatus;
+}
+function isAsyncThunkArray(a) {
+    return typeof a[0] === "function" && "pending" in a[0] && "fulfilled" in a[0] && "rejected" in a[0];
+}
+function isPending() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["pending"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isPending()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.pending; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isRejected() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["rejected"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isRejected()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.rejected; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isRejectedWithValue() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    var hasFlag = function (action) {
+        return action && action.meta && action.meta.rejectedWithValue;
+    };
+    if (asyncThunks.length === 0) {
+        return function (action) {
+            var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
+            return combinedMatcher(action);
+        };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isRejectedWithValue()(asyncThunks[0]);
+    }
+    return function (action) {
+        var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
+        return combinedMatcher(action);
+    };
+}
+function isFulfilled() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["fulfilled"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isFulfilled()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.fulfilled; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isAsyncThunkAction() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["pending", "fulfilled", "rejected"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isAsyncThunkAction()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = [];
+        for (var _i = 0, asyncThunks_1 = asyncThunks; _i < asyncThunks_1.length; _i++) {
+            var asyncThunk = asyncThunks_1[_i];
+            matchers.push(asyncThunk.pending, asyncThunk.rejected, asyncThunk.fulfilled);
+        }
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+// src/index.ts
+(0,immer__WEBPACK_IMPORTED_MODULE_2__.enableES5)();
+
+//# sourceMappingURL=module.js.map
+
+/***/ }),
+
+/***/ "./node_modules/immer/dist/immer.esm.js":
+/*!**********************************************!*\
+  !*** ./node_modules/immer/dist/immer.esm.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "Immer": () => (/* binding */ un),
+/* harmony export */   "applyPatches": () => (/* binding */ pn),
+/* harmony export */   "castDraft": () => (/* binding */ K),
+/* harmony export */   "castImmutable": () => (/* binding */ $),
+/* harmony export */   "createDraft": () => (/* binding */ ln),
+/* harmony export */   "current": () => (/* binding */ D),
+/* harmony export */   "enableAllPlugins": () => (/* binding */ J),
+/* harmony export */   "enableES5": () => (/* binding */ N),
+/* harmony export */   "enableMapSet": () => (/* binding */ C),
+/* harmony export */   "enablePatches": () => (/* binding */ T),
+/* harmony export */   "finishDraft": () => (/* binding */ dn),
+/* harmony export */   "freeze": () => (/* binding */ d),
+/* harmony export */   "immerable": () => (/* binding */ L),
+/* harmony export */   "isDraft": () => (/* binding */ t),
+/* harmony export */   "isDraftable": () => (/* binding */ r),
+/* harmony export */   "nothing": () => (/* binding */ H),
+/* harmony export */   "original": () => (/* binding */ e),
+/* harmony export */   "produce": () => (/* binding */ fn),
+/* harmony export */   "produceWithPatches": () => (/* binding */ cn),
+/* harmony export */   "setAutoFreeze": () => (/* binding */ sn),
+/* harmony export */   "setUseProxies": () => (/* binding */ vn)
+/* harmony export */ });
+function n(n){for(var t=arguments.length,r=Array(t>1?t-1:0),e=1;e<t;e++)r[e-1]=arguments[e];if(true){var i=Y[n],o=i?"function"==typeof i?i.apply(null,r):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}throw Error("[Immer] minified error nr: "+n+(r.length?" "+r.map((function(n){return"'"+n+"'"})).join(","):"")+". Find the full error at: https://bit.ly/3cXEKWf")}function t(n){return!!n&&!!n[Q]}function r(n){return!!n&&(function(n){if(!n||"object"!=typeof n)return!1;var t=Object.getPrototypeOf(n);if(null===t)return!0;var r=Object.hasOwnProperty.call(t,"constructor")&&t.constructor;return r===Object||"function"==typeof r&&Function.toString.call(r)===Z}(n)||Array.isArray(n)||!!n[L]||!!n.constructor[L]||s(n)||v(n))}function e(r){return t(r)||n(23,r),r[Q].t}function i(n,t,r){void 0===r&&(r=!1),0===o(n)?(r?Object.keys:nn)(n).forEach((function(e){r&&"symbol"==typeof e||t(e,n[e],n)})):n.forEach((function(r,e){return t(e,r,n)}))}function o(n){var t=n[Q];return t?t.i>3?t.i-4:t.i:Array.isArray(n)?1:s(n)?2:v(n)?3:0}function u(n,t){return 2===o(n)?n.has(t):Object.prototype.hasOwnProperty.call(n,t)}function a(n,t){return 2===o(n)?n.get(t):n[t]}function f(n,t,r){var e=o(n);2===e?n.set(t,r):3===e?(n.delete(t),n.add(r)):n[t]=r}function c(n,t){return n===t?0!==n||1/n==1/t:n!=n&&t!=t}function s(n){return X&&n instanceof Map}function v(n){return q&&n instanceof Set}function p(n){return n.o||n.t}function l(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var t=tn(n);delete t[Q];for(var r=nn(t),e=0;e<r.length;e++){var i=r[e],o=t[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(t[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]})}return Object.create(Object.getPrototypeOf(n),t)}function d(n,e){return void 0===e&&(e=!1),y(n)||t(n)||!r(n)?n:(o(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i(n,(function(n,t){return d(t,!0)}),!0),n)}function h(){n(2)}function y(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b(t){var r=rn[t];return r||n(18,t),r}function m(n,t){rn[n]||(rn[n]=t)}function _(){return false||U||n(0),U}function j(n,t){t&&(b("Patches"),n.u=[],n.s=[],n.v=t)}function O(n){g(n),n.p.forEach(S),n.p=null}function g(n){n===U&&(U=n.l)}function w(n){return U={p:[],l:U,h:n,m:!0,_:0}}function S(n){var t=n[Q];0===t.i||1===t.i?t.j():t.O=!0}function P(t,e){e._=e.p.length;var i=e.p[0],o=void 0!==t&&t!==i;return e.h.g||b("ES5").S(e,t,o),o?(i[Q].P&&(O(e),n(4)),r(t)&&(t=M(e,t),e.l||x(e,t)),e.u&&b("Patches").M(i[Q],t,e.u,e.s)):t=M(e,i,[]),O(e),e.u&&e.v(e.u,e.s),t!==H?t:void 0}function M(n,t,r){if(y(t))return t;var e=t[Q];if(!e)return i(t,(function(i,o){return A(n,e,t,i,o,r)}),!0),t;if(e.A!==n)return t;if(!e.P)return x(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l(e.k):e.o;i(3===e.i?new Set(o):o,(function(t,i){return A(n,e,o,t,i,r)})),x(n,o,!1),r&&n.u&&b("Patches").R(e,r,n.u,n.s)}return e.o}function A(e,i,o,a,c,s){if( true&&c===o&&n(5),t(c)){var v=M(e,c,s&&i&&3!==i.i&&!u(i.D,a)?s.concat(a):void 0);if(f(o,a,v),!t(v))return;e.m=!1}if(r(c)&&!y(c)){if(!e.h.F&&e._<1)return;M(e,c),i&&i.A.l||x(e,c)}}function x(n,t,r){void 0===r&&(r=!1),n.h.F&&n.m&&d(t,r)}function z(n,t){var r=n[Q];return(r?p(r):n)[t]}function I(n,t){if(t in n)for(var r=Object.getPrototypeOf(n);r;){var e=Object.getOwnPropertyDescriptor(r,t);if(e)return e;r=Object.getPrototypeOf(r)}}function k(n){n.P||(n.P=!0,n.l&&k(n.l))}function E(n){n.o||(n.o=l(n.t))}function R(n,t,r){var e=s(t)?b("MapSet").N(t,r):v(t)?b("MapSet").T(t,r):n.g?function(n,t){var r=Array.isArray(n),e={i:r?1:0,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:null,o:null,j:null,C:!1},i=e,o=en;r&&(i=[e],o=on);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(t,r):b("ES5").J(t,r);return(r?r.A:_()).p.push(e),e}function D(e){return t(e)||n(22,e),function n(t){if(!r(t))return t;var e,u=t[Q],c=o(t);if(u){if(!u.P&&(u.i<4||!b("ES5").K(u)))return u.t;u.I=!0,e=F(t,c),u.I=!1}else e=F(t,c);return i(e,(function(t,r){u&&a(u.t,t)===r||f(e,t,n(r))})),3===c?new Set(e):e}(e)}function F(n,t){switch(t){case 2:return new Map(n);case 3:return Array.from(n)}return l(n)}function N(){function r(n,t){var r=s[n];return r?r.enumerable=t:s[n]=r={configurable:!0,enumerable:t,get:function(){var t=this[Q];return true&&f(t),en.get(t,n)},set:function(t){var r=this[Q]; true&&f(r),en.set(r,n,t)}},r}function e(n){for(var t=n.length-1;t>=0;t--){var r=n[t][Q];if(!r.P)switch(r.i){case 5:a(r)&&k(r);break;case 4:o(r)&&k(r)}}}function o(n){for(var t=n.t,r=n.k,e=nn(r),i=e.length-1;i>=0;i--){var o=e[i];if(o!==Q){var a=t[o];if(void 0===a&&!u(t,o))return!0;var f=r[o],s=f&&f[Q];if(s?s.t!==a:!c(f,a))return!0}}var v=!!t[Q];return e.length!==nn(t).length+(v?0:1)}function a(n){var t=n.k;if(t.length!==n.t.length)return!0;var r=Object.getOwnPropertyDescriptor(t,t.length-1);return!(!r||r.get)}function f(t){t.O&&n(3,JSON.stringify(p(t)))}var s={};m("ES5",{J:function(n,t){var e=Array.isArray(n),i=function(n,t){if(n){for(var e=Array(t.length),i=0;i<t.length;i++)Object.defineProperty(e,""+i,r(i,!0));return e}var o=tn(t);delete o[Q];for(var u=nn(o),a=0;a<u.length;a++){var f=u[a];o[f]=r(f,n||!!o[f].enumerable)}return Object.create(Object.getPrototypeOf(t),o)}(e,n),o={i:e?5:4,A:t?t.A:_(),P:!1,I:!1,D:{},l:t,t:n,k:i,o:null,O:!1,C:!1};return Object.defineProperty(i,Q,{value:o,writable:!0}),i},S:function(n,r,o){o?t(r)&&r[Q].A===n&&e(n.p):(n.u&&function n(t){if(t&&"object"==typeof t){var r=t[Q];if(r){var e=r.t,o=r.k,f=r.D,c=r.i;if(4===c)i(o,(function(t){t!==Q&&(void 0!==e[t]||u(e,t)?f[t]||n(o[t]):(f[t]=!0,k(r)))})),i(e,(function(n){void 0!==o[n]||u(o,n)||(f[n]=!1,k(r))}));else if(5===c){if(a(r)&&(k(r),f.length=!0),o.length<e.length)for(var s=o.length;s<e.length;s++)f[s]=!1;else for(var v=e.length;v<o.length;v++)f[v]=!0;for(var p=Math.min(o.length,e.length),l=0;l<p;l++)void 0===f[l]&&n(o[l])}}}}(n.p[0]),e(n.p))},K:function(n){return 4===n.i?o(n):a(n)}})}function T(){function e(n){if(!r(n))return n;if(Array.isArray(n))return n.map(e);if(s(n))return new Map(Array.from(n.entries()).map((function(n){return[n[0],e(n[1])]})));if(v(n))return new Set(Array.from(n).map(e));var t=Object.create(Object.getPrototypeOf(n));for(var i in n)t[i]=e(n[i]);return u(n,L)&&(t[L]=n[L]),t}function f(n){return t(n)?e(n):n}var c="add";m("Patches",{$:function(t,r){return r.forEach((function(r){for(var i=r.path,u=r.op,f=t,s=0;s<i.length-1;s++){var v=o(f),p=""+i[s];0!==v&&1!==v||"__proto__"!==p&&"constructor"!==p||n(24),"function"==typeof f&&"prototype"===p&&n(24),"object"!=typeof(f=a(f,p))&&n(15,i.join("/"))}var l=o(f),d=e(r.value),h=i[i.length-1];switch(u){case"replace":switch(l){case 2:return f.set(h,d);case 3:n(16);default:return f[h]=d}case c:switch(l){case 1:return f.splice(h,0,d);case 2:return f.set(h,d);case 3:return f.add(d);default:return f[h]=d}case"remove":switch(l){case 1:return f.splice(h,1);case 2:return f.delete(h);case 3:return f.delete(r.value);default:return delete f[h]}default:n(17,u)}})),t},R:function(n,t,r,e){switch(n.i){case 0:case 4:case 2:return function(n,t,r,e){var o=n.t,s=n.o;i(n.D,(function(n,i){var v=a(o,n),p=a(s,n),l=i?u(o,n)?"replace":c:"remove";if(v!==p||"replace"!==l){var d=t.concat(n);r.push("remove"===l?{op:l,path:d}:{op:l,path:d,value:p}),e.push(l===c?{op:"remove",path:d}:"remove"===l?{op:c,path:d,value:f(v)}:{op:"replace",path:d,value:f(v)})}}))}(n,t,r,e);case 5:case 1:return function(n,t,r,e){var i=n.t,o=n.D,u=n.o;if(u.length<i.length){var a=[u,i];i=a[0],u=a[1];var s=[e,r];r=s[0],e=s[1]}for(var v=0;v<i.length;v++)if(o[v]&&u[v]!==i[v]){var p=t.concat([v]);r.push({op:"replace",path:p,value:f(u[v])}),e.push({op:"replace",path:p,value:f(i[v])})}for(var l=i.length;l<u.length;l++){var d=t.concat([l]);r.push({op:c,path:d,value:f(u[l])})}i.length<u.length&&e.push({op:"replace",path:t.concat(["length"]),value:i.length})}(n,t,r,e);case 3:return function(n,t,r,e){var i=n.t,o=n.o,u=0;i.forEach((function(n){if(!o.has(n)){var i=t.concat([u]);r.push({op:"remove",path:i,value:n}),e.unshift({op:c,path:i,value:n})}u++})),u=0,o.forEach((function(n){if(!i.has(n)){var o=t.concat([u]);r.push({op:c,path:o,value:n}),e.unshift({op:"remove",path:o,value:n})}u++}))}(n,t,r,e)}},M:function(n,t,r,e){r.push({op:"replace",path:[],value:t===H?void 0:t}),e.push({op:"replace",path:[],value:n.t})}})}function C(){function t(n,t){function r(){this.constructor=n}a(n,t),n.prototype=(r.prototype=t.prototype,new r)}function e(n){n.o||(n.D=new Map,n.o=new Map(n.t))}function o(n){n.o||(n.o=new Set,n.t.forEach((function(t){if(r(t)){var e=R(n.A.h,t,n);n.p.set(t,e),n.o.add(e)}else n.o.add(t)})))}function u(t){t.O&&n(3,JSON.stringify(p(t)))}var a=function(n,t){return(a=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,t){n.__proto__=t}||function(n,t){for(var r in t)t.hasOwnProperty(r)&&(n[r]=t[r])})(n,t)},f=function(){function n(n,t){return this[Q]={i:2,l:t,A:t?t.A:_(),P:!1,I:!1,o:void 0,D:void 0,t:n,k:this,C:!1,O:!1},this}t(n,Map);var o=n.prototype;return Object.defineProperty(o,"size",{get:function(){return p(this[Q]).size}}),o.has=function(n){return p(this[Q]).has(n)},o.set=function(n,t){var r=this[Q];return u(r),p(r).has(n)&&p(r).get(n)===t||(e(r),k(r),r.D.set(n,!0),r.o.set(n,t),r.D.set(n,!0)),this},o.delete=function(n){if(!this.has(n))return!1;var t=this[Q];return u(t),e(t),k(t),t.D.set(n,!1),t.o.delete(n),!0},o.clear=function(){var n=this[Q];u(n),p(n).size&&(e(n),k(n),n.D=new Map,i(n.t,(function(t){n.D.set(t,!1)})),n.o.clear())},o.forEach=function(n,t){var r=this;p(this[Q]).forEach((function(e,i){n.call(t,r.get(i),i,r)}))},o.get=function(n){var t=this[Q];u(t);var i=p(t).get(n);if(t.I||!r(i))return i;if(i!==t.t.get(n))return i;var o=R(t.A.h,i,t);return e(t),t.o.set(n,o),o},o.keys=function(){return p(this[Q]).keys()},o.values=function(){var n,t=this,r=this.keys();return(n={})[V]=function(){return t.values()},n.next=function(){var n=r.next();return n.done?n:{done:!1,value:t.get(n.value)}},n},o.entries=function(){var n,t=this,r=this.keys();return(n={})[V]=function(){return t.entries()},n.next=function(){var n=r.next();if(n.done)return n;var e=t.get(n.value);return{done:!1,value:[n.value,e]}},n},o[V]=function(){return this.entries()},n}(),c=function(){function n(n,t){return this[Q]={i:3,l:t,A:t?t.A:_(),P:!1,I:!1,o:void 0,t:n,k:this,p:new Map,O:!1,C:!1},this}t(n,Set);var r=n.prototype;return Object.defineProperty(r,"size",{get:function(){return p(this[Q]).size}}),r.has=function(n){var t=this[Q];return u(t),t.o?!!t.o.has(n)||!(!t.p.has(n)||!t.o.has(t.p.get(n))):t.t.has(n)},r.add=function(n){var t=this[Q];return u(t),this.has(n)||(o(t),k(t),t.o.add(n)),this},r.delete=function(n){if(!this.has(n))return!1;var t=this[Q];return u(t),o(t),k(t),t.o.delete(n)||!!t.p.has(n)&&t.o.delete(t.p.get(n))},r.clear=function(){var n=this[Q];u(n),p(n).size&&(o(n),k(n),n.o.clear())},r.values=function(){var n=this[Q];return u(n),o(n),n.o.values()},r.entries=function(){var n=this[Q];return u(n),o(n),n.o.entries()},r.keys=function(){return this.values()},r[V]=function(){return this.values()},r.forEach=function(n,t){for(var r=this.values(),e=r.next();!e.done;)n.call(t,e.value,e.value,this),e=r.next()},n}();m("MapSet",{N:function(n,t){return new f(n,t)},T:function(n,t){return new c(n,t)}})}function J(){N(),C(),T()}function K(n){return n}function $(n){return n}var G,U,W="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X="undefined"!=typeof Map,q="undefined"!=typeof Set,B="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H=W?Symbol.for("immer-nothing"):((G={})["immer-nothing"]=!0,G),L=W?Symbol.for("immer-draftable"):"__$immer_draftable",Q=W?Symbol.for("immer-state"):"__$immer_state",V="undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator",Y={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return"Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return"Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return"Unsupported patch operation: "+n},18:function(n){return"The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return"produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return"'current' expects a draft, got: "+n},23:function(n){return"'original' expects a draft, got: "+n},24:"Patching reserved attributes like __proto__, prototype and constructor is not allowed"},Z=""+Object.prototype.constructor,nn="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,tn=Object.getOwnPropertyDescriptors||function(n){var t={};return nn(n).forEach((function(r){t[r]=Object.getOwnPropertyDescriptor(n,r)})),t},rn={},en={get:function(n,t){if(t===Q)return n;var e=p(n);if(!u(e,t))return function(n,t,r){var e,i=I(t,r);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,t);var i=e[t];return n.I||!r(i)?i:i===z(n.t,t)?(E(n),n.o[t]=R(n.A.h,i,n)):i},has:function(n,t){return t in p(n)},ownKeys:function(n){return Reflect.ownKeys(p(n))},set:function(n,t,r){var e=I(p(n),t);if(null==e?void 0:e.set)return e.set.call(n.k,r),!0;if(!n.P){var i=z(p(n),t),o=null==i?void 0:i[Q];if(o&&o.t===r)return n.o[t]=r,n.D[t]=!1,!0;if(c(r,i)&&(void 0!==r||u(n.t,t)))return!0;E(n),k(n)}return n.o[t]===r&&"number"!=typeof r&&(void 0!==r||t in n.o)||(n.o[t]=r,n.D[t]=!0,!0)},deleteProperty:function(n,t){return void 0!==z(n.t,t)||t in n.t?(n.D[t]=!1,E(n),k(n)):delete n.D[t],n.o&&delete n.o[t],!0},getOwnPropertyDescriptor:function(n,t){var r=p(n),e=Reflect.getOwnPropertyDescriptor(r,t);return e?{writable:!0,configurable:1!==n.i||"length"!==t,enumerable:e.enumerable,value:r[t]}:e},defineProperty:function(){n(11)},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n(12)}},on={};i(en,(function(n,t){on[n]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)}})),on.deleteProperty=function(t,r){return true&&isNaN(parseInt(r))&&n(13),en.deleteProperty.call(this,t[0],r)},on.set=function(t,r,e){return true&&"length"!==r&&isNaN(parseInt(r))&&n(14),en.set.call(this,t[0],r,e,t[0])};var un=function(){function e(t){var e=this;this.g=B,this.F=!0,this.produce=function(t,i,o){if("function"==typeof t&&"function"!=typeof i){var u=i;i=t;var a=e;return function(n){var t=this;void 0===n&&(n=u);for(var r=arguments.length,e=Array(r>1?r-1:0),o=1;o<r;o++)e[o-1]=arguments[o];return a.produce(n,(function(n){var r;return(r=i).call.apply(r,[t,n].concat(e))}))}}var f;if("function"!=typeof i&&n(6),void 0!==o&&"function"!=typeof o&&n(7),r(t)){var c=w(e),s=R(e,t,void 0),v=!0;try{f=i(s),v=!1}finally{v?O(c):g(c)}return"undefined"!=typeof Promise&&f instanceof Promise?f.then((function(n){return j(c,o),P(n,c)}),(function(n){throw O(c),n})):(j(c,o),P(f,c))}if(!t||"object"!=typeof t){if((f=i(t))===H)return;return void 0===f&&(f=t),e.F&&d(f,!0),f}n(21,t)},this.produceWithPatches=function(n,t){return"function"==typeof n?function(t){for(var r=arguments.length,i=Array(r>1?r-1:0),o=1;o<r;o++)i[o-1]=arguments[o];return e.produceWithPatches(t,(function(t){return n.apply(void 0,[t].concat(i))}))}:[e.produce(n,t,(function(n,t){r=n,i=t})),r,i];var r,i},"boolean"==typeof(null==t?void 0:t.useProxies)&&this.setUseProxies(t.useProxies),"boolean"==typeof(null==t?void 0:t.autoFreeze)&&this.setAutoFreeze(t.autoFreeze)}var i=e.prototype;return i.createDraft=function(e){r(e)||n(8),t(e)&&(e=D(e));var i=w(this),o=R(this,e,void 0);return o[Q].C=!0,g(i),o},i.finishDraft=function(t,r){var e=t&&t[Q]; true&&(e&&e.C||n(9),e.I&&n(10));var i=e.A;return j(i,r),P(void 0,i)},i.setAutoFreeze=function(n){this.F=n},i.setUseProxies=function(t){t&&!B&&n(20),this.g=t},i.applyPatches=function(n,r){var e;for(e=r.length-1;e>=0;e--){var i=r[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=b("Patches").$;return t(n)?o(n,r):this.produce(n,(function(n){return o(n,r.slice(e+1))}))},e}(),an=new un,fn=an.produce,cn=an.produceWithPatches.bind(an),sn=an.setAutoFreeze.bind(an),vn=an.setUseProxies.bind(an),pn=an.applyPatches.bind(an),ln=an.createDraft.bind(an),dn=an.finishDraft.bind(an);/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fn);
+//# sourceMappingURL=immer.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/redux-thunk/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/redux-thunk/es/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (thunk);
 
 /***/ }),
 
@@ -738,6 +2141,142 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
 
 /***/ }),
 
+/***/ "./node_modules/reselect/es/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/reselect/es/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultMemoize": () => (/* binding */ defaultMemoize),
+/* harmony export */   "createSelectorCreator": () => (/* binding */ createSelectorCreator),
+/* harmony export */   "createSelector": () => (/* binding */ createSelector),
+/* harmony export */   "createStructuredSelector": () => (/* binding */ createStructuredSelector)
+/* harmony export */ });
+function defaultEqualityCheck(a, b) {
+  return a === b;
+}
+
+function areArgumentsShallowlyEqual(equalityCheck, prev, next) {
+  if (prev === null || next === null || prev.length !== next.length) {
+    return false;
+  }
+
+  // Do this in a for loop (and not a `forEach` or an `every`) so we can determine equality as fast as possible.
+  var length = prev.length;
+  for (var i = 0; i < length; i++) {
+    if (!equalityCheck(prev[i], next[i])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function defaultMemoize(func) {
+  var equalityCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultEqualityCheck;
+
+  var lastArgs = null;
+  var lastResult = null;
+  // we reference arguments instead of spreading them for performance reasons
+  return function () {
+    if (!areArgumentsShallowlyEqual(equalityCheck, lastArgs, arguments)) {
+      // apply arguments instead of spreading for performance.
+      lastResult = func.apply(null, arguments);
+    }
+
+    lastArgs = arguments;
+    return lastResult;
+  };
+}
+
+function getDependencies(funcs) {
+  var dependencies = Array.isArray(funcs[0]) ? funcs[0] : funcs;
+
+  if (!dependencies.every(function (dep) {
+    return typeof dep === 'function';
+  })) {
+    var dependencyTypes = dependencies.map(function (dep) {
+      return typeof dep;
+    }).join(', ');
+    throw new Error('Selector creators expect all input-selectors to be functions, ' + ('instead received the following types: [' + dependencyTypes + ']'));
+  }
+
+  return dependencies;
+}
+
+function createSelectorCreator(memoize) {
+  for (var _len = arguments.length, memoizeOptions = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    memoizeOptions[_key - 1] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, funcs = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      funcs[_key2] = arguments[_key2];
+    }
+
+    var recomputations = 0;
+    var resultFunc = funcs.pop();
+    var dependencies = getDependencies(funcs);
+
+    var memoizedResultFunc = memoize.apply(undefined, [function () {
+      recomputations++;
+      // apply arguments instead of spreading for performance.
+      return resultFunc.apply(null, arguments);
+    }].concat(memoizeOptions));
+
+    // If a selector is called with the exact same arguments we don't need to traverse our dependencies again.
+    var selector = memoize(function () {
+      var params = [];
+      var length = dependencies.length;
+
+      for (var i = 0; i < length; i++) {
+        // apply arguments instead of spreading and mutate a local list of params for performance.
+        params.push(dependencies[i].apply(null, arguments));
+      }
+
+      // apply arguments instead of spreading for performance.
+      return memoizedResultFunc.apply(null, params);
+    });
+
+    selector.resultFunc = resultFunc;
+    selector.dependencies = dependencies;
+    selector.recomputations = function () {
+      return recomputations;
+    };
+    selector.resetRecomputations = function () {
+      return recomputations = 0;
+    };
+    return selector;
+  };
+}
+
+var createSelector = createSelectorCreator(defaultMemoize);
+
+function createStructuredSelector(selectors) {
+  var selectorCreator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : createSelector;
+
+  if (typeof selectors !== 'object') {
+    throw new Error('createStructuredSelector expects first argument to be an object ' + ('where each property is a selector, instead received a ' + typeof selectors));
+  }
+  var objectKeys = Object.keys(selectors);
+  return selectorCreator(objectKeys.map(function (key) {
+    return selectors[key];
+  }), function () {
+    for (var _len3 = arguments.length, values = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      values[_key3] = arguments[_key3];
+    }
+
+    return values.reduce(function (composition, value, index) {
+      composition[objectKeys[index]] = value;
+      return composition;
+    }, {});
+  });
+}
+
+/***/ }),
+
 /***/ "./src/store/bugs.js":
 /*!***************************!*\
   !*** ./src/store/bugs.js ***!
@@ -747,64 +2286,94 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "bugAdded": () => (/* binding */ bugAdded),
-/* harmony export */   "bugRemoved": () => (/* binding */ bugRemoved),
 /* harmony export */   "bugResolved": () => (/* binding */ bugResolved),
-/* harmony export */   "default": () => (/* binding */ reducer)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getUnresolvedBugs": () => (/* binding */ getUnresolvedBugs)
 /* harmony export */ });
-// Action Types
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reselect */ "./node_modules/reselect/es/index.js");
+// import { createAction, createReducer, createSlice } from "@reduxjs/toolkit";
 
-const BUG_ADDED = "bugAdded";
-const BUG_REMOVED = "bugRemoved";
-const BUG_RESOLVED = "bugResolved";
 
-// Actions Creaters
-
-const bugAdded = (description) => ({
-  type: BUG_ADDED,
-  payload: {
-    description,
-  },
-});
-
-const bugRemoved = (id) => ({
-  type: BUG_REMOVED,
-  payload: {
-    id,
-  },
-});
-
-const bugResolved = (id) => ({
-  type: BUG_RESOLVED,
-  payload: {
-    id,
-  },
-});
-
-// Reducers
 
 let lastId = 0;
 
-function reducer(state = [], action) {
-  switch (action.type) {
-    case BUG_ADDED:
-      return [
-        ...state,
-        {
-          id: ++lastId,
-          description: action.payload.description,
-          resolved: false,
-        },
-      ];
-    case BUG_REMOVED:
-      return state.filter((bug) => bug.id !== action.payload.id);
-    case BUG_RESOLVED:
-      return state.map((bug) =>
-        bug.id !== action.payload.id ? bug : { ...bug, resolved: true }
-      );
-    default:
-      return state;
-  }
-}
+const slice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
+  name: "bugs",
+  initialState: [],
+  reducers: {
+    // action ==> Action Handlers
+    bugAdded: (bugs, action) => {
+      bugs.push({
+        id: ++lastId,
+        description: action.payload.description,
+        resolved: false,
+      });
+    },
+    bugResolved: (bugs, action) => {
+      const index = bugs.findIndex((bug) => bug.id !== action.payload.id);
+      bugs[index].resolved = true;
+    },
+  },
+});
+// console.log(slice);
+const { bugAdded, bugResolved } = slice.actions;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slice.reducer);
+
+// Selector
+// export const getUnresolvedBugs = (state) => {
+//   return state.entities.bugs.filter((bug) => !bug.resolved);
+// };
+
+const getUnresolvedBugs = (0,reselect__WEBPACK_IMPORTED_MODULE_0__.createSelector)(
+  (state) => state.entities.bugs,
+  (bugs) => bugs.filter((bug) => !bug.resolved)
+);
+
+// Actions Creaters
+// export const bugAdded = createAction("bugAdded");
+// export const bugRemoved = createAction("bugRemoved");
+// export const bugResolved = createAction("bugResolved");
+
+// Reducers
+
+// export default createReducer([], {
+//   //actions : functions (event => event handler)
+//   [bugAdded.type]: (bugs, action) => {
+//     bugs.push({
+//       id: ++lastId,
+//       description: action.payload.description,
+//       resolved: false,
+//     });
+//   },
+//   [bugResolved.type]: (bugs, action) => {
+//     const index = bugs.findIndex((bug) => bug.id !== action.payload.id);
+//     bugs[index].resolved = true;
+//   },
+//   bugRemoved: (bugs, action) => {},
+// });
+
+// export default function reducer(state = [], action) {
+//   switch (action.type) {
+//     case bugAdded.type:
+//       return [
+//         ...state,
+//         {
+//           id: ++lastId,
+//           description: action.payload.description,
+//           resolved: false,
+//         },
+//       ];
+//     case bugRemoved.type:
+//       return state.filter((bug) => bug.id !== action.payload.id);
+//     case bugResolved.type:
+//       return state.map((bug) =>
+//         bug.id !== action.payload.id ? bug : { ...bug, resolved: true }
+//       );
+//     default:
+//       return state;
+//   }
+// }
 
 
 /***/ }),
@@ -817,19 +2386,99 @@ function reducer(state = [], action) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ configureStore)
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducer */ "./src/store/reducer.js");
+
+// import reducer from "./projects";
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  return (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({ reducer: _reducer__WEBPACK_IMPORTED_MODULE_0__.default });
+}
+
+
+/***/ }),
+
+/***/ "./src/store/entities.js":
+/*!*******************************!*\
+  !*** ./src/store/entities.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-devtools-extension */ "./node_modules/redux-devtools-extension/index.js");
-/* harmony import */ var _bugs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bugs */ "./src/store/bugs.js");
+/* harmony import */ var _bugs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bugs */ "./src/store/bugs.js");
+/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects */ "./src/store/projects.js");
 
 
 
 
-function configureStore() {
-  const store = (0,redux__WEBPACK_IMPORTED_MODULE_2__.createStore)(_bugs__WEBPACK_IMPORTED_MODULE_1__.default, (0,redux_devtools_extension__WEBPACK_IMPORTED_MODULE_0__.devToolsEnhancer)({ trace: true }));
-  return store;
-}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({
+  bugs: _bugs__WEBPACK_IMPORTED_MODULE_0__.default,
+  projects: _projects__WEBPACK_IMPORTED_MODULE_1__.default,
+}));
+
+
+/***/ }),
+
+/***/ "./src/store/projects.js":
+/*!*******************************!*\
+  !*** ./src/store/projects.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "projectAdded": () => (/* binding */ projectAdded),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+
+
+let lastProjectId = 0;
+
+const slice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
+  name: "projects",
+  initialState: [],
+  reducers: {
+    projectAdded: (projects, action) => {
+      projects.push({
+        id: ++lastProjectId,
+        name: action.payload.name,
+      });
+    },
+  },
+});
+
+const { projectAdded } = slice.actions;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slice.reducer);
+
+
+/***/ }),
+
+/***/ "./src/store/reducer.js":
+/*!******************************!*\
+  !*** ./src/store/reducer.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entities */ "./src/store/entities.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
+  entities: _entities__WEBPACK_IMPORTED_MODULE_0__.default,
+}));
 
 
 /***/ }),
@@ -979,6 +2628,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_configureStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/configureStore */ "./src/store/configureStore.js");
 /* harmony import */ var _store_bugs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/bugs */ "./src/store/bugs.js");
+/* harmony import */ var _store_projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/projects */ "./src/store/projects.js");
+
 
 
 
@@ -989,10 +2640,11 @@ const unsubscribe = store.subscribe(() => {
   // This is where we do UI changes when state gets updated like if you are using Vanilla JS so we will do DOM stuff here or if you are using react so you will re-render your UI here.
 });
 
-store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)("Bug 1"));
-store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)("Bug 2"));
-store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)("Bug 3"));
-store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugResolved)(1));
+store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)({ description: "Bug 1" }));
+store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)({ description: "Bug 2" }));
+store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugAdded)({ description: "Bug 3" }));
+store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugResolved)({ id: 1 }));
+store.dispatch((0,_store_projects__WEBPACK_IMPORTED_MODULE_2__.projectAdded)({ name: "Project 1" }));
 
 // store.dispatch(bugResolved(1));
 
@@ -1000,6 +2652,11 @@ store.dispatch((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.bugResolved)(1));
 // store.dispatch(bugRemoved(1));
 
 console.log(store.getState());
+console.log((0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.getUnresolvedBugs)(store.getState()));
+
+const x = (0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.getUnresolvedBugs)(store.getState());
+const y = (0,_store_bugs__WEBPACK_IMPORTED_MODULE_1__.getUnresolvedBugs)(store.getState());
+console.log(x === y);
 
 // import store from "./customStore";
 // import { bugAdded, bugRemoved } from "./actionCreator";
