@@ -1,8 +1,5 @@
 import configureStore from "./store/configureStore";
 import {
-  bugAdded,
-  bugResolved,
-  bugAssignedToUser,
   getUnresolvedBugs,
   getBugsByUser,
   loadBugs,
