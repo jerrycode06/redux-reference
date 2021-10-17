@@ -6,16 +6,40 @@ import configureStore from "../configureStore";
 //SOCIAL TEST - ONLY CARES ABOUT BEHAVIOUR, that means if we change implementation in future, behaviour will be the same
 /*Here we will make fake API call with axios-mock-adapter to perform actual unit test*/
 describe("bugsSlice", () => {
-  it("should handle the addBug action", async () => {
+  let fakeAxios;
+  let store;
+
+  beforeEach(() => {
+    fakeAxios = new MockAdapter(axios);
+    store = configureStore();
+  });
+
+  const bugsSlice = () => store.getState().entities.bugs;
+
+  it("should add the bug to the store if it's saved to the server", async () => {
+    // Arrange
     const bug = { description: "aa" };
     const savedBug = { ...bug, id: 1 };
-
-    const fakeAxios = new MockAdapter(axios);
     fakeAxios.onPost("/bugs").reply(200, savedBug);
 
-    const store = configureStore();
+    // Act
     await store.dispatch(addBug(bug));
-    expect(store.getState().entities.bugs.list).toContainEqual(savedBug);
+
+    // Assert
+    expect(bugsSlice().list).toContainEqual(savedBug);
+  });
+
+  it("should not add the bug to the store if it's not saved to the server", async () => {
+    // Arrange
+    const bug = { description: "aa" };
+
+    fakeAxios.onPost("/bugs").reply(500);
+
+    // Act
+    await store.dispatch(addBug(bug));
+
+    // Assert
+    expect(bugsSlice().list).toHaveLength(0);
   });
 });
 
