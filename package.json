@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack build",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "Jerry",
   "license": "ISC",

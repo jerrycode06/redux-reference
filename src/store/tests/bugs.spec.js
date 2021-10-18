@@ -1,6 +1,6 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { addBug } from "../bugs";
+import { addBug, getUnresolvedBugs } from "../bugs";
 import configureStore from "../configureStore";
 
 //SOCIAL TEST - ONLY CARES ABOUT BEHAVIOUR, that means if we change implementation in future, behaviour will be the same
@@ -15,6 +15,14 @@ describe("bugsSlice", () => {
   });
 
   const bugsSlice = () => store.getState().entities.bugs;
+
+  const createState = () => ({
+    entities: {
+      bugs: {
+        list: [],
+      },
+    },
+  });
 
   it("should add the bug to the store if it's saved to the server", async () => {
     // Arrange
@@ -40,6 +48,24 @@ describe("bugsSlice", () => {
 
     // Assert
     expect(bugsSlice().list).toHaveLength(0);
+  });
+
+  describe("selectors", () => {
+    it("getUnresolvedBugs", () => {
+      // Arrange
+      const state = createState();
+      state.entities.bugs.list = [
+        { id: 1, resolved: true },
+        { id: 2 },
+        { id: 3 },
+      ];
+
+      // Act
+      const result = getUnresolvedBugs(state);
+
+      // Assert
+      expect(result).toHaveLength(2);
+    });
   });
 });
 
