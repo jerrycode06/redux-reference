@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.31% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/38</span>
+                <span class='fraction'>38/38</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>13/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.12% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/32</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -243,16 +243,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
@@ -298,7 +298,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -314,7 +314,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,9 +340,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -415,10 +415,10 @@ const slice = createSlice({
       const index = bugs.list.findIndex((bug) =&gt; bug.id !== action.payload.id);
       bugs.list[index].resolved = true;
     },
-    bugAssignedToUser: <span class="fstat-no" title="function not covered" >(b</span>ugs, action) =&gt; {
-      const { id: bugId, userId } = <span class="cstat-no" title="statement not covered" >action.payload;</span>
-      const index = <span class="cstat-no" title="statement not covered" >bugs.list.findIndex(<span class="fstat-no" title="function not covered" >(b</span>ug) =&gt; <span class="cstat-no" title="statement not covered" >bug.id === bugId)</span>;</span>
-<span class="cstat-no" title="statement not covered" >      bugs.list[index].userId = userId;</span>
+    bugAssignedToUser: (bugs, action) =&gt; {
+      const { id: bugId, userId } = action.payload;
+      const index = bugs.list.findIndex((bug) =&gt; bug.id === bugId);
+      bugs.list[index].userId = userId;
     },
     bugsRequested: (bugs, action) =&gt; {
       bugs.loading = true;
@@ -479,8 +479,8 @@ export const resolveBug = (id) =&gt;
     onSuccess: bugResolved.type,
   });
 &nbsp;
-export const assignBugToUser = <span class="fstat-no" title="function not covered" >(b</span>ugId, userId) =&gt;
-<span class="cstat-no" title="statement not covered" >  apiCallBegan({</span>
+export const assignBugToUser = (bugId, userId) =&gt;
+  apiCallBegan({
     url: url + "/" + bugId,
     method: "patch",
     data: { userId },
@@ -505,10 +505,10 @@ export const getUnresolvedBugs = createSelector(
   (bugs) =&gt; bugs.list.filter((bug) =&gt; !bug.resolved)
 );
 &nbsp;
-export const getBugsByUser = <span class="fstat-no" title="function not covered" >(u</span>serId) =&gt;
-<span class="cstat-no" title="statement not covered" >  createSelector(</span>
-<span class="fstat-no" title="function not covered" >    (s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.entities.bugs,</span>
-<span class="fstat-no" title="function not covered" >    (b</span>ugs) =&gt; <span class="cstat-no" title="statement not covered" >bugs.list.filter(<span class="fstat-no" title="function not covered" >(b</span>ug) =&gt; <span class="cstat-no" title="statement not covered" >bug.userId === userId)</span></span>
+export const getBugsByUser = (userId) =&gt;
+  createSelector(
+    (state) =&gt; state.entities.bugs,
+    (bugs) =&gt; bugs.list.filter((bug) =&gt; bug.userId === userId)
   );
 &nbsp;
 // Actions Creaters
@@ -562,7 +562,7 @@ export const getBugsByUser = <span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Oct 18 2021 14:50:44 GMT+0530 (India Standard Time)
+                at Mon Oct 18 2021 15:13:56 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

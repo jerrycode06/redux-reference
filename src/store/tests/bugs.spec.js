@@ -1,6 +1,13 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { addBug, getUnresolvedBugs, resolveBug, loadBugs } from "../bugs";
+import {
+  addBug,
+  getUnresolvedBugs,
+  resolveBug,
+  loadBugs,
+  assignBugToUser,
+  getBugsByUser,
+} from "../bugs";
 import configureStore from "../configureStore";
 
 //SOCIAL TEST - ONLY CARES ABOUT BEHAVIOUR, that means if we change implementation in future, behaviour will be the same
@@ -88,6 +95,16 @@ describe("bugsSlice", () => {
     });
   });
 
+  it("assign the bug to the user", async () => {
+    fakeAxios.onPatch("/bugs/1").reply(200, { id: 1, userId: 1 });
+    fakeAxios.onPost("/bugs").reply(200, { id: 1 });
+
+    await store.dispatch(addBug({}));
+    await store.dispatch(assignBugToUser(1, 1));
+
+    expect(bugsSlice().list[0].userId).toBe(1);
+  });
+
   it("should mark the bug as resolved if it's saved to the server", async () => {
     // Arrange
     fakeAxios.onPatch("/bugs/1").reply(200, { id: 1, resolved: true });
@@ -155,6 +172,15 @@ describe("bugsSlice", () => {
 
       // Assert
       expect(result).toHaveLength(2);
+    });
+
+    it("getBugsByUser", () => {
+      const state = createState();
+      state.entities.bugs.list = [{ id: 1, userId: 1 }, { id: 2 }, { id: 3 }];
+
+      const result = getBugsByUser(1)(state);
+
+      expect(result).toHaveLength(1);
     });
   });
 });
