@@ -13,7 +13,7 @@ export default function () {
     reducer,
     middleware: [
       ...getDefaultMiddleware(),
-      logger({ destination: "Console" }),
+      // logger({ destination: "Console" }),
       errorCatch,
       api,
     ],
